@@ -1,0 +1,133 @@
+* {
+  box-sizing: border-box;
+}
+
+.main-window {
+  display: flex;
+}
+
+#instances-field {
+  border: 1px solid;
+  padding: 10px;
+  overflow: auto;
+  border-radius: 15px;
+  margin-right: 20px;
+  width: 400px;
+}
+
+.instances-list {
+  list-style: none;
+  padding: 0;
+}
+
+.instance-item {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid;
+  border-radius: 10px;
+  padding: 5px;
+  margin-bottom: 10px;
+  position: relative;
+}
+
+.instance-item span {
+  padding: 2px 0;
+}
+
+.instance-status {
+  display: flex;
+}
+
+.status {
+  width: 16px;
+  height: 16px;
+  left: 80px;
+  border: 1px solid #000000;
+  border-radius: 16px;
+  background-color: #000000;
+  position: absolute;
+}
+
+.status::after {
+  content: 'Stopped';
+  position: absolute;
+  left: 30px;
+  top: -1px;
+}
+
+.instance-item.started .status {
+  border: 1px solid #00de00;
+  background-color: #00de00;
+}
+
+.instance-item.started .status::after {
+  content: 'Running';
+}
+
+.instance-actions {
+  display: flex;
+  position: relative;
+}
+
+.status-icon {
+  margin-left: 8px;
+  width: 20px;
+  background-repeat: no-repeat;
+  background-position: center;
+  cursor: pointer;
+}
+
+.stop-start {
+  background-image: url('../img/start.png');
+}
+
+.instance-item.started .stop-start {
+  background-image: url('../img/stop.png');
+}
+
+.close {
+  background-image: url('../img/close.png');
+}
+
+.create-new-instance {
+  display: block;
+  text-align: center;
+}
+
+.worklog {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 1px solid;
+  border-radius: 15px;
+  padding: 10px;
+  width: 400px;
+  height: 400px;
+}
+
+#worklog-list {
+  height: 100%;
+  overflow: auto;
+  padding: 0;
+  padding-right: 15px;
+  font-size: 12px;
+}
+
+.list-item-msg {
+  display: flex;
+  padding: 10px 0;
+  flex-direction: column;
+  align-items: flex-start;
+  color: #000000;
+}
+
+.list-item-msg.active {
+  align-items: flex-end;
+}
+
+.active > .list-item-head {
+  color: #ff0000;
+}
+.hidden {
+  display: none;
+}
